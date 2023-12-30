@@ -21,15 +21,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [loadingAction, setLoadingAction] = useState(false);
 
-  // console.log(dropdown);
-  // Sample data for dropdown options
-  // const categories = ["All", "Electronics", "Clothing", "Books"];
-
-  // const handleSearch = () => {
-  //   // Add your logic here to handle the search
-  //   console.log("Searching for:", searchTerm, "in category:", selectedCategory);
-  //   // You can send a request to your backend or update state accordingly
-  // };
   useEffect(() => {
     const fetchProducts = async () => {
       let response = await fetch("/api/product");
@@ -114,7 +105,6 @@ export default function Home() {
         let res = await response.json();
         // console.log(res);
         setDropdown(res.products);
-        setLoading(false);
       } catch (error) {
         console.log(error);
       } finally {

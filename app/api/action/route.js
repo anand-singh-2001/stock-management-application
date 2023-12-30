@@ -5,8 +5,7 @@ export async function POST(request) {
   // Replace the uri string with your connection string.
   let { action, slug, initialQuantity } = await request.json(); //all the items passes as body are saved into the body variable.
   //   console.log(action);
-  const uri =
-    "mongodb+srv://Anand:Babyrocks@mycluster.vw46xc3.mongodb.net/?retryWrites=true&w=majority";
+  const uri = process.env.NEXT_PUBLIC_MONGO_URI;
 
   const client = new MongoClient(uri);
 
